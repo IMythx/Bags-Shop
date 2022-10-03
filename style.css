@@ -984,6 +984,7 @@ header #three .container .navs li:nth-child(5) .dropmenu ul li {
   header #three .container .head > p {
     font-size: 1.4rem;
     font-weight: 700;
+    margin-left: 7.5rem;
   }
   header #three .container .head > .icon {
     font-size: 1.6rem;
@@ -1463,17 +1464,7 @@ main #slider .container .left {
 main #slider .container .right {
   right: 0;
 }
-main #slider .container .right:hover,
-main #slider .container .left:hover,
-main #offers .container .right:hover,
-main #offers .container .left:hover,
-main #posts .container .right:hover,
-main #posts .container .left:hover,
-footer .row #footer-slider .right:hover,
-footer .row #footer-slider .left:hover {
-  background-color: #e07767;
-  color: #fff;
-}
+
 main #slider .container .right.disabled,
 main #slider .container .left.disabled,
 main #offers .container .right.disabled,
@@ -1483,16 +1474,6 @@ main #posts .container .left.disabled,
 footer .row #footer-slider .right.disabled,
 footer .row #footer-slider .left.disabled {
   cursor: default;
-}
-main #slider .container .right.disabled:hover,
-main #slider .container .left.disabled:hover,
-main #offers .container .right.disabled:hover,
-main #offers .container .left.disabled:hover,
-main #posts .container .right.disabled:hover,
-main #posts .container .left.disabled:hover,
-footer .row #footer-slider .right.disabled:hover,
-footer .row #footer-slider .left.disabled:hover {
-  background-color: #e0776788;
 }
 
 /* one */
@@ -1664,6 +1645,7 @@ main #offers .container .box .info > :nth-child(1) {
 main #offers .container .box .info > :nth-child(2) {
   font-weight: 600;
   font-size: 1.25rem;
+  text-align: center;
 }
 main #offers .container .box .info > :nth-child(3) {
   font-size: 0.9rem;
@@ -2484,7 +2466,29 @@ main #posts-block .container .box:first-child .icons #FaceBookLogo {
 main #posts-block .container .box:first-child .icons > *:hover {
   background-color: #e07767;
 }
-
+@media (hover: hover) {
+  main #slider .container .right:hover,
+  main #slider .container .left:hover,
+  main #offers .container .right:hover,
+  main #offers .container .left:hover,
+  main #posts .container .right:hover,
+  main #posts .container .left:hover,
+  footer .row #footer-slider .right:hover,
+  footer .row #footer-slider .left:hover {
+    background-color: #e07767;
+    color: #fff;
+  }
+  main #slider .container .right.disabled:hover,
+  main #slider .container .left.disabled:hover,
+  main #offers .container .right.disabled:hover,
+  main #offers .container .left.disabled:hover,
+  main #posts .container .right.disabled:hover,
+  main #posts .container .left.disabled:hover,
+  footer .row #footer-slider .right.disabled:hover,
+  footer .row #footer-slider .left.disabled:hover {
+    background-color: #e0776788;
+  }
+}
 @media (max-width: 1200px) {
   main #categories .container {
     width: 55%;
@@ -2601,6 +2605,9 @@ main #posts-block .container .box:first-child .icons > *:hover {
 @media (max-width: 930px) {
   main .shop .container .product {
     flex-basis: calc((100% / 3) - 1.5rem);
+  }
+  main .shop .container .product .info > :first-child {
+    white-space: normal;
   }
   main .shop .container .product .imgs img:first-child {
     width: 26.2vw;
@@ -2870,7 +2877,7 @@ main #posts-block .container .box:first-child .icons > *:hover {
   }
   main #posts .container {
     gap: 0;
-    margin-left: 1rem;
+    margin: auto;
   }
   main #posts .container .box {
     flex-basis: 100%;
@@ -2902,6 +2909,20 @@ main #posts-block .container .box:first-child .icons > *:hover {
   }
 }
 @media (max-width: 450px) {
+  main #slider .container .right,
+  main #slider .container .left {
+    font-size: 2rem;
+  }
+  main #offers .container {
+    gap: 1.7rem;
+    margin-left: 6vw;
+  }
+  main #offers .container .box {
+    width: calc(50% - 1.7rem);
+  }
+  main #offers .container .right {
+    right: 6.5%;
+  }
   main #shapes .container .shape {
     flex-basis: 36%;
   }
@@ -2924,6 +2945,20 @@ main #posts-block .container .box:first-child .icons > *:hover {
   }
 }
 @media (max-width: 360px) {
+  main #offers .container {
+    gap: 0;
+    margin: auto;
+  }
+  main #offers .container .box {
+    width: 100%;
+  }
+  main #offers .container .box:first-child {
+    --sliderCount: 8;
+    --boxMargin: -100;
+  }
+  main #offers .container .right {
+    right: 0;
+  }
   main .shop .container .product {
     flex-basis: 100%;
   }
@@ -3144,7 +3179,14 @@ footer .row #tabs .box:last-child form .button .icon {
   color: #fff;
   font-size: 1.5rem;
 }
-
+footer #copyrights {
+  margin-top: 2rem;
+  border-top: 1px solid #515151;
+  padding: 1rem 0 2rem 0;
+}
+footer #copyrights p {
+  font-size: 0.8rem;
+}
 @media (max-width: 992px) {
   footer .row #footer-slider .box {
     padding: 0;
