@@ -1012,7 +1012,7 @@ header #three .container .navs li:nth-child(5) .dropmenu ul li {
     flex-basis: 90%;
   }
   header #three .container .navs li .icon,
-  footer .row #tabs .box .icon {
+  footer .row #tabs .box > .icon {
     font-size: 1.3rem;
     border: 1px solid #000;
     margin-right: -17%;
@@ -3089,7 +3089,7 @@ footer .row #tabs .box:nth-child(3) ul.active {
   height: 170px;
 }
 footer .row #tabs .box:nth-child(4) ul.active {
-  height: 73px;
+  height: 120.6px;
 }
 footer .row #tabs .box .title {
   font-weight: 700;
@@ -3244,7 +3244,7 @@ footer #copyrights p {
   footer .row #tabs .box:nth-child(4) ul {
     gap: 2.5rem;
   }
-  footer .row #tabs .box .icon {
+  footer .row #tabs .box > .icon {
     position: absolute;
     top: 4%;
     right: 17%;
