@@ -45,7 +45,9 @@ onAppearAnimation.forEach((e) => loadObserver.observe(e));
 //###########
 //###########
 //disabling cursor only if platform is mobile
-window.onresize = function () {
+window.onload = disableCursor;
+window.onresize = disableCursor;
+function disableCursor() {
   setTimeout(() => {
     let styleEle = document.createElement("style");
     styleEle.classList.add("style");
@@ -56,7 +58,7 @@ window.onresize = function () {
       document.body.removeChild(document.querySelector("body > .style"));
     }
   }, 100);
-};
+}
 // setting up header select menus
 window.onclick = function (e) {
   if (e.target === headerSelectBoxs[0] || e.target === headerSelectBoxs[1]) {
