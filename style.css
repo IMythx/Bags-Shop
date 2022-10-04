@@ -24,6 +24,9 @@ body {
   margin: 0 auto;
   width: 95%;
 }
+img {
+  user-select: none !important;
+}
 .be-animated {
   opacity: 0;
   transform: translateY(2rem);
@@ -738,7 +741,7 @@ header #three .container .navs li:nth-child(5) .dropmenu {
   visibility: hidden;
   position: absolute;
   top: 257%;
-  width: 200%;
+  width: 150%;
   box-shadow: 0 2px 4px #00000045;
   left: -20%;
   padding: 1rem;
@@ -802,7 +805,7 @@ header #three .container .navs li:nth-child(5) .dropmenu ul li {
     -ms-transform: translateY(-25px);
     -o-transform: translateY(-25px);
     visibility: visible;
-    z-index: 1;
+    z-index: 100000000;
   }
   header #three .container .navs li a::before {
     content: "";
@@ -1750,7 +1753,7 @@ main .shop .container .product {
   -moz-transition: 0.2s;
   -ms-transition: 0.2s;
   -o-transition: 0.2s;
-  transform-origin: bottom left;
+  transform-origin: center;
 }
 main #shop-one .container .product.disable {
   scale: 0.5;
@@ -3089,7 +3092,7 @@ footer .row #tabs .box:nth-child(3) ul.active {
   height: 170px;
 }
 footer .row #tabs .box:nth-child(4) ul.active {
-  height: 120.6px;
+  height: 145px;
 }
 footer .row #tabs .box .title {
   font-weight: 700;

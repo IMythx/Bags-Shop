@@ -44,21 +44,6 @@ onAppearAnimation.forEach((e) => loadObserver.observe(e));
 //###########
 //###########
 //###########
-//disabling cursor only if platform is mobile
-window.onload = disableCursor;
-window.onresize = disableCursor;
-function disableCursor() {
-  setTimeout(() => {
-    let styleEle = document.createElement("style");
-    styleEle.classList.add("style");
-    if (navigator.userAgent.match(/Mobi/gi) != null) {
-      styleEle.append("*{cursor: none !important;}");
-      document.body.appendChild(styleEle);
-    } else {
-      document.body.removeChild(document.querySelector("body > .style"));
-    }
-  }, 100);
-}
 // setting up header select menus
 window.onclick = function (e) {
   if (e.target === headerSelectBoxs[0] || e.target === headerSelectBoxs[1]) {
@@ -209,7 +194,6 @@ document
   .style.setProperty("transition", "var(--main-trans)");
 navsCollapseIcons.forEach((icon) => {
   icon.addEventListener("click", () => {
-    console.log(icon.parentElement.children);
     icon.parentElement.children[1].classList.toggle("active");
     icon.parentElement.children[2].classList.toggle("active");
     icon.parentElement.children[3].classList.toggle("active");
@@ -329,9 +313,37 @@ let footerSlider = new imgsSlider(footerRightArrow, footerLeftArrow);
 // setting up mobile footer collapse icons functionality
 footerCollapseIcons.forEach((icon) => {
   icon.addEventListener("click", () => {
-    console.log(icon.parentElement.children);
     icon.parentElement.children[1].classList.toggle("active");
     icon.parentElement.children[2].classList.toggle("active");
     icon.parentElement.children[4].classList.toggle("active");
   });
 });
+
+//disabling cursor only if platform is mobile
+window.onload = function () {
+  setTimeout(() => {
+    let styleEle = document.createElement("style");
+    styleEle.id = "style";
+    if (navigator.userAgent.match(/Mobi/gi) != null) {
+      styleEle.append("*{cursor: none !important;}");
+      document.body.appendChild(styleEle);
+    }
+  });
+};
+window.onresize = disableCursor;
+function disableCursor() {
+  setTimeout(() => {
+    let styleEle = document.createElement("style");
+    styleEle.id = "style";
+    if (navigator.userAgent.match(/Mobi/gi) != null) {
+      styleEle.append("*{cursor: none !important;}");
+      if (!(document.body.lastElementChild.id === "style")) {
+        document.body.appendChild(styleEle);
+      }
+    } else {
+      document
+        .querySelectorAll("body > #style")
+        .forEach((ele) => document.body.removeChild(ele));
+    }
+  }, 100);
+}
