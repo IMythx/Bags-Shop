@@ -2733,7 +2733,7 @@ main #posts-block .container .box:first-child .icons > *:hover {
     padding-right: 0;
   }
   main #slider .container .box:not(:first-child) .text {
-    padding-left: 4rem;
+    padding-left: 2rem;
   }
   main #slider .container .box .text p:nth-of-type(1) {
     color: #fff;
